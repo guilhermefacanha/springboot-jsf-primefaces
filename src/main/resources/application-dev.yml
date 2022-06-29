@@ -1,0 +1,4 @@
+#use esse arquivos para sobrescrever as propriedades padroes do sistema em ambiente de desenvolvimento
+#backend:
+#  service:
+#    url: http://localhost:8008/api
