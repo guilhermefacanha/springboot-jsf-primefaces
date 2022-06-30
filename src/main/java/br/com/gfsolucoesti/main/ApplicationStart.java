@@ -3,11 +3,7 @@ package br.com.gfsolucoesti.main;
 import java.io.Serializable;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import org.springframework.context.annotation.Import;
-import br.com.gfsolucoesti.config.MimeMappingConfig;
-import br.com.gfsolucoesti.config.RedirectToIndexConfig;
 
-@Import({MimeMappingConfig.class, RedirectToIndexConfig.class})
 @SpringBootApplication
 public class ApplicationStart implements Serializable {
 
