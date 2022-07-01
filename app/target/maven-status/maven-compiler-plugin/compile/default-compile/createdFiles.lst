@@ -1,0 +1,6 @@
+br/com/gfsolucoesti/config/RedirectToIndexConfigurationProvider.class
+br/com/gfsolucoesti/util/WebUtils.class
+br/com/gfsolucoesti/controller/InputController.class
+br/com/gfsolucoesti/entity/OAuthToken.class
+br/com/gfsolucoesti/entity/UsuarioLogado.class
+br/com/gfsolucoesti/FrontEndSampleApplication.class
