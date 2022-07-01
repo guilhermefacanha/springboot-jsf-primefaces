@@ -34,7 +34,9 @@ public class InputController implements Serializable {
   private UsuarioLogado usuarioLogado;
   
   public void init() {
-    log.info("Init InputController method");
+    log.info("===================================");
+    log.info("  Init InputController method");
+    log.info("===================================");
   }
 
   public void doAction() {
