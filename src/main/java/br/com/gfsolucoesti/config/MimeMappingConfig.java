@@ -4,13 +4,18 @@ import org.springframework.boot.web.server.MimeMappings;
 import org.springframework.boot.web.server.WebServerFactoryCustomizer;
 import org.springframework.boot.web.servlet.server.ConfigurableServletWebServerFactory;
 import org.springframework.context.annotation.Configuration;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Configuration
 public class MimeMappingConfig
     implements WebServerFactoryCustomizer<ConfigurableServletWebServerFactory> {
 
   @Override
   public void customize(ConfigurableServletWebServerFactory factory) {
+    log.debug("===================================");
+    log.debug("  Config MimeMapping.... ");
+    log.debug("===================================");
     MimeMappings mappings = new MimeMappings(MimeMappings.DEFAULT);
     mappings.add("xsd", "text/xml; charset=utf-8");
     mappings.add("otf", "font/opentype");

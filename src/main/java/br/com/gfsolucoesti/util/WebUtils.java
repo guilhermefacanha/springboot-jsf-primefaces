@@ -1,4 +1,4 @@
-package br.com.gfsolucoesti.utils;
+package br.com.gfsolucoesti.util;
 
 import java.lang.management.ManagementFactory;
 import java.util.Enumeration;

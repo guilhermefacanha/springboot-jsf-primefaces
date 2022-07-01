@@ -1,11 +1,15 @@
 app:
   nome: app
+# ================================
+# SERVER CONFIG
+# ================================
 server:
   port: 8000
   servlet:
-    context-path: /app
-  compression:
-    enabled: true
+    context-path: /
+# ================================
+# SPRING CONFIG
+# ================================
 spring:
   profiles:
     active: '@activatedProperties@'
@@ -13,13 +17,12 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
-  devtools:
-    restart:
-      enabled: false
 backend:
   service:
-    url: /api
-  
+    url: http://localhost:8000/api
+# ================================
+# JSF CONFIG
+# ================================
 joinfaces:
   ## joinfaces.faces-servlet
   # Configures the FacesServlet handled by JoinFaces.
@@ -29,15 +32,12 @@ joinfaces:
     load-on-startup: -1
     name: FacesServlet
     order: 0 # The order-property for the ServletRegistrationBean.
-    url-mappings: '*.jsf,*.faces,*.xhtml'
+    url-mappings: /faces/*,*.jsf,*.faces,*.xhtml
   jsf:
-    state-saving-method: server
-    project-stage: production
-    facelets-libraries: /taglib/primefaces-ultima.taglib.xml
+    PROJECT_STAGE: Production
   primefaces:
-    theme: vela
-    font-awesome: true
-
+    theme: saga
+    
 # ================================
 # MONITORING CONFIG
 # ================================
@@ -61,8 +61,7 @@ management:
         include: '*'
   server:
     port: ${server.port}
-
-
+    
 # ================================
 # LOG LEVEL
 # ================================
@@ -72,6 +71,5 @@ logging:
   level:
     root: INFO
     br.com.gfsolucoesti: DEBUG
-
 
 

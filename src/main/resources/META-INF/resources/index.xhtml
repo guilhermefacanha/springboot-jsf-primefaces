@@ -20,18 +20,18 @@
 					<p:panel styleClass="card"
 						header="Bem vindo, digite seu nome para teste interação com JSF">
 						<p:spacer height="15" />
-						<p:outputLabel
-							value="State Loaded from Query param: #{inputController.state}" />
+						
+						<p:outputLabel value="State loaded from query param: #{inputController.state}" />
 						<div class="material">
-							<p:outputLabel for="name" value="Nome" />
+							<p:outputLabel for="name" value="Name" />
 							<p:inputText id="name" value="#{inputController.name}"
-								placeholder="digite seu nome..." required="true" />
+								placeholder="type your name..." required="true" />
 							<p:message for="name" />
 						</div>
 						<f:facet name="footer">
 							<p:commandButton value="Submit"
 								action="#{inputController.doAction}" update="@form"
-								styleClass="btn-primary" />
+								styleClass="btn-primary widAuto" />
 						</f:facet>
 					</p:panel>
 				</div>

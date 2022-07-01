@@ -17,7 +17,7 @@ body .ui-widget{
 
 .header {
     overflow: hidden;
-    background-color: #1f2d40;
+    background-color: #3f51b5;
     position: fixed;
     top: 0;
     width: 100%;
@@ -204,4 +204,8 @@ div.dialog-content {
 .ui-widget .ui-widget{
     margin-left: -5px;
 
+}
+
+.widAuto{
+	width: auto;
 }

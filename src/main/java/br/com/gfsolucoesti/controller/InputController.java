@@ -7,7 +7,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Named;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.core.env.Environment;
-import br.com.gfsolucoesti.utils.WebUtils;
+import br.com.gfsolucoesti.entity.UsuarioLogado;
+import br.com.gfsolucoesti.util.WebUtils;
 import lombok.Getter;
 import lombok.Setter;
 import lombok.extern.slf4j.Slf4j;
@@ -17,31 +18,38 @@ import lombok.extern.slf4j.Slf4j;
 @SessionScoped
 public class InputController implements Serializable {
 
-  private static final long serialVersionUID = -5579890931623078608L;
+  private static final long serialVersionUID = -8082431543568921926L;
 
-  @Autowired private Environment env;
+  @Autowired
+  private Environment env;
 
-  @Getter @Setter private String state;
-  @Getter @Setter private String name;
+  @Getter
+  @Setter
+  private String state;
+  @Getter
+  @Setter
+  private String name;
 
+  @Getter
+  private UsuarioLogado usuarioLogado;
+  
   public void init() {
-
+    log.debug("===================================");
+    log.debug("  Init InputController method");
+    log.debug("===================================");
   }
 
   public void doAction() {
-    FacesContext.getCurrentInstance()
-        .addMessage(
-            "INFO",
-            new FacesMessage(
-                "Welcome to Prime Ultima Lab " + name + "!",
-                "<b>Ultima Theme</b> and <b>SpringBoot</b> integration via <b>JoinFaces.</b>"));
+    FacesContext.getCurrentInstance().addMessage("INFO",
+        new FacesMessage("Welcome to Prime Ultima Lab " + name + "!",
+            "<b>Ultima Theme</b> and <b>SpringBoot</b> integration via <b>JoinFaces.</b>"));
   }
 
   public String getAppUrl() {
     return WebUtils.getContext();
   }
 
-  public String getBackendUrl(){
+  public String getBackendUrl() {
     return env.getProperty("backend.service.url", "http://localhost");
   }
 }
