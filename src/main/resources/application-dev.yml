@@ -1,0 +1,10 @@
+# ================================
+# LOG LEVEL
+# ================================
+logging:
+  #  pattern:
+  #    console: '%d{HH:mm:ss.SSS} [app=${app.nome}] [%t] %-5level %logger{36} - %msg%n'
+  level:
+    root: INFO
+    br.com.gfsolucoesti: DEBUG
+    io.undertow.session: DEBUG

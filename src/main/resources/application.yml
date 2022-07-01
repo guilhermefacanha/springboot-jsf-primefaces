@@ -1,8 +1,28 @@
+app:
+  nome: app
+# ================================
+# SERVER CONFIG
+# ================================
 server:
   port: 8000
+  servlet:
+    context-path: /
+# ================================
+# SPRING CONFIG
+# ================================
+spring:
+  profiles:
+    active: '@activatedProperties@'
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 backend:
   service:
     url: http://localhost:8000/api
+# ================================
+# JSF CONFIG
+# ================================
 joinfaces:
   ## joinfaces.faces-servlet
   # Configures the FacesServlet handled by JoinFaces.
@@ -17,5 +37,39 @@ joinfaces:
     PROJECT_STAGE: Production
   primefaces:
     theme: saga
+    
+# ================================
+# MONITORING CONFIG
+# ================================
+management:
+  endpoint:
+    beans:
+      cache:
+        time-to-live: 10s
+    health:
+      show-details: always
+  endpoints:
+    jmx:
+      exposure:
+        include: '*'
+    web:
+      base-path: /actuator
+      cors:
+        allowed-methods: GET,POST
+        allowed-origins: '*'
+      exposure:
+        include: '*'
+  server:
+    port: ${server.port}
+    
+# ================================
+# LOG LEVEL
+# ================================
+logging:
+  #  pattern:
+  #    console: '%d{HH:mm:ss.SSS} [app=${app.nome}] [%t] %-5level %logger{36} - %msg%n'
+  level:
+    root: INFO
+    br.com.gfsolucoesti: DEBUG
 
 
