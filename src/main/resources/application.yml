@@ -11,6 +11,8 @@ server:
 # SPRING CONFIG
 # ================================
 spring:
+  banner:
+    location: classpath:banner.txt
   profiles:
     active: '@activatedProperties@'
   servlet:
